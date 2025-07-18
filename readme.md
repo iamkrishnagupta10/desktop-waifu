@@ -45,7 +45,19 @@ Running AI Waifu Assistant is easy and straightforward! Here's how you can get s
 <br/>
 </div>
 
-- Finally, double-click the "start.bat" file that's located in the same folder where you extracted the ZIP file. This will automatically download all dependencies and start the program.
+- On **Windows** simply double-click the `start.bat` file in the project root. This script installs every dependency and launches the assistant automatically.
+
+- For **macOS** (Apple Silicon and Intel) or Linux open a terminal and execute `./start.sh`:
+
+```bash
+./start.sh
+```
+
+This script creates a Python virtual environment in `./waifu`, installs Node and Python packages and then starts the program. The same script has been tested on Apple M1‑M5 machines.
+
+### Deploying to Vercel
+
+An example Vercel setup is provided in `vercel.json` along with a serverless function under `api/message.js`.  Deploy the repository to Vercel and configure the `CHARACTERAI_KEY` environment variable from your dashboard.  You can then call `/api/message?characterId=<ID>&message=<text>` to interact with your character online.
 
 If you run into any problems, you can go to the following website to report issues: https://github.com/AlizerUncaged/desktop-waifu/issues/new.
 
